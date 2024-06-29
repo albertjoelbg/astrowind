@@ -20,5 +20,5 @@ module.exports = {
     },
   },
   plugins: [typographyPlugin],
-  darkMode: 'class',
+  darkMode: 'class'
 };

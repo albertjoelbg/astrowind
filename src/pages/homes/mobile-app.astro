@@ -31,9 +31,9 @@ const metadata = {
     <Header
       position="left"
       links={[
-        { text: 'Services', href: '#' },
-        { text: 'Features', href: '#' },
-        { text: 'About', href: '#' },
+        {text: 'Services', href: '#'},
+        {text: 'Features', href: '#'},
+        {text: 'About', href: '#'},
       ]}
       actions={[
         {
@@ -56,9 +56,10 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight">AstroWind App</span>: <br /> professional websites <span
-        class="hidden xl:inline">made easy</span
-      >
+      <span class="text-accent dark:text-white highlight">AstroWind App</span>: <br/> professional
+      websites <span
+      class="hidden xl:inline">made easy</span
+    >
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -70,11 +71,11 @@ const metadata = {
 
     <div slot="actions" class="flex max-w-sm gap-4">
       <Button variant="link" href={appStoreDownloadLink}>
-        <Image src={appStoreImg} alt="App Store Image" width={200} />
+        <Image src={appStoreImg} alt="App Store Image" width={200}/>
       </Button>
 
       <Button variant="link" href={googlePlayDownloadLink}>
-        <Image src={googlePlayImg} alt="Google Play Image" width={200} />
+        <Image src={googlePlayImg} alt="Google Play Image" width={200}/>
       </Button>
     </div>
   </Hero2>
@@ -197,9 +198,9 @@ const metadata = {
   <Stats
     title="Statistics of our app"
     stats={[
-      { amount: '20K', icon: 'tabler:download' },
-      { amount: '18.5K', icon: 'tabler:users' },
-      { amount: '4.7', icon: 'tabler:user-star' },
+      {amount: '20K', icon: 'tabler:download'},
+      {amount: '18.5K', icon: 'tabler:users'},
+      {amount: '4.7', icon: 'tabler:user-star'},
     ]}
   />
 
@@ -286,11 +287,11 @@ const metadata = {
   >
     <div slot="actions" class="flex max-w-sm gap-4">
       <Button variant="link" href={appStoreDownloadLink}>
-        <Image src={appStoreImg} alt="App Store Image" width={200} />
+        <Image src={appStoreImg} alt="App Store Image" width={200}/>
       </Button>
 
       <Button variant="link" href={googlePlayDownloadLink}>
-        <Image src={googlePlayImg} alt="Google Play Image" width={200} />
+        <Image src={googlePlayImg} alt="Google Play Image" width={200}/>
       </Button>
     </div>
   </CallToAction>
