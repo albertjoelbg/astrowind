@@ -5,8 +5,6 @@ import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import {trimSlash, getAsset} from '~/utils/permalinks';
 import Image from '~/components/common/Image.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
-import Button from '~/components/ui/Button.astro';
-
 
 interface Link {
   text?: string;
@@ -39,8 +37,6 @@ const {
   isFullWidth = false,
   showToggleTheme = false,
   position = 'center',
-  showRssFeed = false,
-
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;

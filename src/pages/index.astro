@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -9,8 +8,11 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import PropertyCard2 from '~/components/widgets/PropertyCard2.astro';
 import HeadLine from '~/components/ui/Headline.astro';
 import CardPost from '~/components/ui/CardPost.astro'
-import imagenPost1 from '../assets/images/blog/escoger-propiedad.jpg';
-import imagenPost2 from '../assets/images/blog/invertir-propiedades-comerciales.jpg';
+import imagenPost1 from '~/assets/images/blog/escoger-propiedad.jpg';
+import imagenPost2 from '~/assets/images/blog/invertir-propiedades-comerciales.jpg';
+import imagenPost3 from '~/assets/images/blog/renovar-propiedad.jpg';
+import imagenPost4 from '~/assets/images/blog/inspeccion-propiedad.jpg';
+
 
 const metadata = {
   title: 'EHR Bienes Raíces',
@@ -20,6 +22,37 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Hero/>
+  
+  <HeadLine tagline="PROPIEDADES" title="Nuestras mejores ofertas"/>
+  <div class="grid p-5 sm:gap-y-8 lg:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-6">
+    <PropertyCard2 id="001" imagen="~/assets/images/propiedades/venta/casa/casa-venta-paracas.jpg"
+                   especificaciones="Zona junto a pista, en esquina, totalmente urbanizada"
+                   precioBaseSoles={170_000}
+                   precioBaseDolares={44391.05} tipo="casa"
+                   disponibilidad="venta"
+                   ubicacion="Ica, Pisco, Paracas"
+                   areaTotal={182} areaConstruida={50}/>
+
+    <PropertyCard2 id="002"
+                   imagen="~/assets/images/propiedades/venta/terreno-cultivo/terreno-cultivo-supe-01.jpg"
+                   especificaciones="Tierras arenosas, agua extraída"
+                   precioBaseSoles={70_000}
+                   precioBaseDolares={18278.67} tipo="terreno de cultivo"
+                   disponibilidad="venta"
+                   ubicacion="Lima, Barranca, Supe"
+                   areaTotal={10_063} areaConstruida={0}/>
+
+    <PropertyCard2 id="003"
+                   imagen="~/assets/images/propiedades/venta/terreno/terreno-irregular-huaraz.jpg"
+                   especificaciones="A 10 MINUTOS DE LA CIUDAD, YA URBANIZADO, FRENTE DE 25.4 M"
+                   precioBaseSoles={1500}
+                   precioBaseDolares={391.69} tipo="terreno"
+                   disponibilidad="venta"
+                   ubicacion="Áncash, Huaraz, Toclla"
+                   areaTotal={1747} areaConstruida={0}/>
+  </div>
+
+
   <Features
     id="features"
     tagline="Beneficios"
@@ -65,8 +98,7 @@ const metadata = {
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
+  
   <Content
     isReversed
     tagline=""
@@ -104,6 +136,7 @@ const metadata = {
     </Fragment>
   </Content>
 
+  
   <Content
     isAfterContent
     items={[
@@ -164,40 +197,12 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      src: '~/assets/images/complementos/adquisicion-bienes-inmuebles.jpg',
       alt: 'Steps image',
     }}
   />
 
-  <HeadLine tagline="PROPIEDADES" title="Nuestras mejores ofertas"/>
-  <div class="grid p-5 sm:gap-y-8 lg:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-6 mb-16">
-    <PropertyCard2 id="001" imagen="~/assets/images/propiedades/venta/casa/casa-venta-paracas.jpg"
-                   especificaciones="Zona junto a pista, en esquina, totalmente urbanizada"
-                   precioBaseSoles={170_000}
-                   precioBaseDolares={44391.05} tipo="casa"
-                   disponibilidad="venta"
-                   ubicacion="Ica, Pisco, Paracas"
-                   areaTotal={182} areaConstruida={50}/>
-
-    <PropertyCard2 id="002"
-                   imagen="~/assets/images/propiedades/venta/terreno-cultivo/terreno-cultivo-supe-01.jpg"
-                   especificaciones="Tierras arenosas, agua extraída"
-                   precioBaseSoles={70_000}
-                   precioBaseDolares={18278.67} tipo="terreno de cultivo"
-                   disponibilidad="venta"
-                   ubicacion="Lima, Barranca, Supe"
-                   areaTotal={10_063} areaConstruida={0}/>
-
-    <PropertyCard2 id="003"
-                   imagen="~/assets/images/propiedades/venta/terreno/terreno-irregular-huaraz.jpg"
-                   especificaciones="A 10 MINUTOS DE LA CIUDAD, YA URBANIZADO, FRENTE DE 25.4 M"
-                   precioBaseSoles={1500}
-                   precioBaseDolares={391.69} tipo="terreno"
-                   disponibilidad="venta"
-                   ubicacion="Áncash, Huaraz, Toclla"
-                   areaTotal={1747} areaConstruida={0}/>
-  </div>
-
+  
   <HeadLine tagline="BLOG" title="TENEMOS ALGUNOS POSTS"/>
 
   <div class="p-5 grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -211,6 +216,17 @@ const metadata = {
               src={imagenPost2}
               href="/los-beneficios-de-invertir-en-propiedades-comerciales"
     />
+    <CardPost titulo="Las Mejores Estrategias para Renovar y Revalorizar tu Propiedad"
+              descripcion="Renovar tu propiedad puede ser una excelente manera de aumentar su valor y hacerla más atractiva para potenciales compradores o inquilinos. Aquí te presentamos algunas estrategias efectivas para renovar y revalorizar tu propiedad."
+              src={imagenPost3}
+              href="/renovar-tu-propiedad"
+    />
+    <CardPost titulo="La Importancia de la Inspección de Propiedades Antes de Comprar"
+              descripcion="Comprar una propiedad es una de las inversiones más importantes que puedes hacer en la vida. Por eso, realizar una inspección detallada antes de finalizar la compra es crucial para evitar sorpresas desagradables y costos inesperados. Aquí te explicamos la importancia de la inspección de propiedades y qué aspectos debes considerar"
+              src={imagenPost4}
+              href="/importancia-de-la-inspeccion-de-propiedades"
+    />
+
 
   </div>
 
