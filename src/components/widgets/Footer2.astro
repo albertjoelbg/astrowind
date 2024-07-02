@@ -1,0 +1,53 @@
+---
+import {Icon} from "astro-icon/components";
+---
+<footer class="bg-gray-100 dark:bg-gray-800 py-10 px-4">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center mb-6 md:mb-0">
+        <div>
+          <h2 class="text-2xl font-semibold">EHR Bienes Raíces</h2>
+          <p class="mt-2">Encuentra tu hogar ideal con nosotros.</p>
+        </div>
+      </div>
+      <div class="flex space-x-6">
+        <a href="/"
+           class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100">Inicio</a>
+        <a href="/nosotros"
+           class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100">Nosotros</a>
+        <a href="/propiedades"
+           class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100">Propiedades</a>
+        <a href="/contacto"
+           class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100">Contacto</a>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center mt-6">
+      <div class="text-gray-600 dark:text-gray-300">
+        &copy; 2024 EHR Bienes Raíces. Todos los derechos reservados.
+      </div>
+      <ul class="flex items-center gap-2">
+        <li>
+          <a href="https://wa.me/+51987654321"
+             class="text-whatsapp dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
+            <Icon name="tabler:brand-whatsapp"
+                  class="w-6 h-6"/>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=61559289243310&locale=es_LA"
+             class="text-facebook dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
+            <Icon name="tabler:brand-facebook"
+                  class="w-6 h-6"/>
+          </a>
+        </li>
+        <li>
+          <a href="#"
+             class="text-instagram dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
+            <Icon name="tabler:brand-instagram"
+                  class="w-6 h-6"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
