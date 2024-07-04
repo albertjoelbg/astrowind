@@ -18,38 +18,46 @@ const metadata = {
   title: 'EHR Bienes Raíces',
   ignoreTitleTemplate: true,
 };
+
+let propiedades = [];
+try {
+  const response = await fetch('https://api-propiedades.vercel.app/api/propiedades-ofertas');
+
+  if (response.ok) {
+    propiedades = await response.json();
+  } else {
+    console.error('Error al obtener los datos', response.statusText);
+  }
+} catch (error) {
+  console.error('Error en la solicitud fetch', error);
+}
 ---
 
 <Layout metadata={metadata}>
   <Hero/>
-  
+
   <HeadLine tagline="PROPIEDADES" title="Nuestras mejores ofertas"/>
   <div class="grid p-5 sm:gap-y-8 lg:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-6">
-    <PropertyCard2 id="001" imagen="~/assets/images/propiedades/venta/casa/casa-venta-paracas.jpg"
-                   especificaciones="Zona junto a pista, en esquina, totalmente urbanizada"
-                   precioBaseSoles={170_000}
-                   precioBaseDolares={44391.05} tipo="casa"
-                   disponibilidad="venta"
-                   ubicacion="Ica, Pisco, Paracas"
-                   areaTotal={182} areaConstruida={50}/>
-
-    <PropertyCard2 id="002"
-                   imagen="~/assets/images/propiedades/venta/terreno-cultivo/terreno-cultivo-supe-01.jpg"
-                   especificaciones="Tierras arenosas, agua extraída"
-                   precioBaseSoles={70_000}
-                   precioBaseDolares={18278.67} tipo="terreno de cultivo"
-                   disponibilidad="venta"
-                   ubicacion="Lima, Barranca, Supe"
-                   areaTotal={10_063} areaConstruida={0}/>
-
-    <PropertyCard2 id="003"
-                   imagen="~/assets/images/propiedades/venta/terreno/terreno-irregular-huaraz.jpg"
-                   especificaciones="A 10 MINUTOS DE LA CIUDAD, YA URBANIZADO, FRENTE DE 25.4 M"
-                   precioBaseSoles={1500}
-                   precioBaseDolares={391.69} tipo="terreno"
-                   disponibilidad="venta"
-                   ubicacion="Áncash, Huaraz, Toclla"
-                   areaTotal={1747} areaConstruida={0}/>
+    {propiedades.map(({
+                        id,
+                        imagen,
+                        especificaciones,
+                        precioBaseSoles,
+                        precioBaseDolares,
+                        tipo,
+                        disponibilidad,
+                        ubicacion,
+                        areaTotal,
+                        areaConstruida
+                      }) => (
+      <PropertyCard2 id={id} imagen={imagen}
+                     especificaciones={especificaciones}
+                     precioBaseSoles={precioBaseSoles}
+                     precioBaseDolares={precioBaseDolares} tipo={tipo}
+                     disponibilidad={disponibilidad}
+                     ubicacion={ubicacion}
+                     areaTotal={areaTotal} areaConstruida={areaConstruida}/>
+    ))}
   </div>
 
 
@@ -98,7 +106,7 @@ const metadata = {
     ]}
   />
 
-  
+
   <Content
     isReversed
     tagline=""
@@ -136,7 +144,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  
+
   <Content
     isAfterContent
     items={[
@@ -202,7 +210,7 @@ const metadata = {
     }}
   />
 
-  
+
   <HeadLine tagline="BLOG" title="TENEMOS ALGUNOS POSTS"/>
 
   <div class="p-5 grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4">

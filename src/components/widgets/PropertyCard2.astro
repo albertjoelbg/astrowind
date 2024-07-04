@@ -17,9 +17,9 @@ let {
 
 <div class="max-w-sm mx-auto bg-white dark:bg-slate-950 shadow-lg rounded-lg overflow-hidden">
   <div class="relative">
-    <Image class="w-48 h-48 object-center" src={imagen} alt="casa de paracas"/>
+    <Image class="w-48 h-48 object-center" src={imagen} alt="Image de propiedad en ${ubicacion}" }/>
     <div class="absolute top-0 right-0 m-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">
-      {id}
+      {id.toString().padStart(4, '0')}
     </div>
     <div
       class="absolute bottom-0 right-0 m-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
@@ -42,7 +42,7 @@ let {
       <h1 class="text-gray-600 font-semibold text-sm ml-1 dark:text-gray-300">{ubicacion}</h1>
     </div>
     <p
-      class="h-16 mt-2 py-2 text-gray-500 text-sm dark:text-gray-400">{especificaciones.toUpperCase()}.</p>
+      class="h-16 mt-2 py-2 text-gray-500 text-sm dark:text-gray-400">{especificaciones}.</p>
 
     <div class="flex justify-between gap-2">
       <div class="flex items-center gap-1 mt-2">
